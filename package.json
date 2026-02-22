@@ -1,0 +1,30 @@
+{
+  "name": "cismdatabase",
+  "version": "1.0.0",
+  "description": "Backend database server for the cismtrainer programm",
+  "license": "ISC",
+  "author": "Udo Gerhards, Udo.Gerhards@gerhards.eu",
+  "type": "commonjs",
+  "main": "server.js",
+  "_moduleAliases": {
+    "@": ".",
+    "@config": "./config",
+    "@lib": "./lib",
+    "@database": "./lib/database",
+    "@dao": "./lib/database/dao",
+    "@model": "./lib/database/model",
+    "@server": "./lib/server"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

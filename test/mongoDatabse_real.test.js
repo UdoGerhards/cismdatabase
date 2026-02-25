@@ -1,11 +1,11 @@
-const { DB_STRING, DB_TEST_NAME } = require("/config");
-const MongoCollectionReadOnly = require("/lib/database/dao/MongoCollectionReadOnly");
-const MongoCollectionReadWrite = require("/lib/database/dao/MongoCollectionReadWrite");
-const MongoDatabase = require("/lib/database/MongoDatabase");
-const TestInfo = require("/lib/database/model/TestInfo");
-const TestAnswer = require("/lib/database/model/TestAnswer");
-const { MongoClient, ObjectId } = require("mongodb");
-const { faker } = require("@faker-js/faker");
+import { DB_STRING, DB_TEST_NAME } from  "/config.js";
+import MongoCollectionReadOnly from  "/lib/database/dao/MongoCollectionReadOnly.js";
+import MongoCollectionReadWrite from  "/lib/database/dao/MongoCollectionReadWrite.js";
+import MongoDatabase from  "/lib/database/MongoDatabase.js";
+import TestInfo from  "/lib/database/model/TestInfo.js";
+import TestAnswer from  "/lib/database/model/TestAnswer.js";
+import { MongoClient, ObjectId } from  "mongodb";
+import { faker } from  "@faker-js/faker";
 
 describe("MongoDatabase_real", () => {
   let client;
@@ -34,8 +34,8 @@ describe("MongoDatabase_real", () => {
 
     database = client.db(DB_TEST_NAME);
 
-    MongoDatabase.init(DB_STRING, DB_TEST_NAME);
-    await MongoDatabase.connect();
+    await MongoDatabase.init(DB_STRING, DB_TEST_NAME);
+    //await MongoDatabase.connect();
 
     questionCol = database.collection("question");
     question = new MongoCollectionReadOnly(questionCol);
@@ -281,9 +281,9 @@ describe("MongoDatabase_real", () => {
       await createFullQuestion();
 
       try {
-        result = await MongoDatabase.spec_getQuestionFull(
-          qstObject._id.toString(),
-        );
+        const qstId = qstObject._id.toString();
+
+        result = await MongoDatabase.spec_getQuestionFull(qstId);
 
         expect(result).not.toBeNull();
         expect(result).toHaveProperty(

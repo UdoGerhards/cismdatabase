@@ -1,6 +1,6 @@
-const { DB_STRING } = require("/config");
-const MongoCollectionReadOnly = require("/lib/database/dao/MongoCollectionReadOnly");
-const { MongoClient, ObjectId } = require("mongodb");
+import { DB_STRING } from "/config.js";
+import MongoCollectionReadOnly from "/lib/database/dao/MongoCollectionReadOnly.js";
+import { MongoClient, ObjectId } from "mongodb";
 
 describe("MongoCollectionReadOnly", () => {
   let client;

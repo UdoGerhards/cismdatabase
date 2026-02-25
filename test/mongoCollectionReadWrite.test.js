@@ -1,6 +1,6 @@
-const { DB_STRING, DB_TEST_NAME } = require ("/config");
-const MongoCollectionReadWrite = require("/lib/database/dao/MongoCollectionReadWrite");
-const { MongoClient, ObjectId } = require ("mongodb");
+import { DB_STRING, DB_TEST_NAME } from "/config.js";
+import MongoCollectionReadWrite from "/lib/database/dao/MongoCollectionReadWrite.js";
+import { MongoClient, ObjectId } from "mongodb";
 
 describe("MongoCollectionReadWrite", () => {
   let client;

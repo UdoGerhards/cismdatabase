@@ -76,18 +76,21 @@ describe("Servertest - testing http requests to the server", () => {
     return qstObject;
   };
 
-  /**
-   * Creates a test object in test database
-   */
-  const createTestInfo = async () => {
-    tstInfo = {
+  const createTestInfoObject = () => {
+    return {
       _id: new ObjectId(),
       createdAT: new Date(),
       name: faker.lorem.word(20),
       wrong: 0,
       user: "0000-0000-0000-0000",
     };
+  };
 
+  /**
+   * Creates a test object in test database
+   */
+  const createTestInfo = async () => {
+    tstInfo = createTestInfoObject();
     await tst.insertOne(tstInfo);
 
     return tstInfo;
@@ -96,7 +99,25 @@ describe("Servertest - testing http requests to the server", () => {
   /**
    * Creates the given answers to a given test
    */
+
+  const createTstAnswerOject = (tstId, res) => {
+    res = res != null ? true : false;
+
+    const fakeQuestionId = new ObjectId();
+    const fakeAnswerId = new ObjectId();
+
+    return {
+      _id: new ObjectId(),
+      test_id: tstId.toString(),
+      question_id: fakeQuestionId.toString(),
+      answer_id: fakeAnswerId.toString(),
+      correct: res,
+      createdAT: new Date(),
+    };
+  };
+
   const createTstAnswers = async (testInfoId) => {
+    /**
     const createAnswer = (res) => {
       res = res != null ? true : false;
 
@@ -111,15 +132,15 @@ describe("Servertest - testing http requests to the server", () => {
         correct: res,
         createdAT: new Date(),
       };
-    };
+    };  */
 
     tstAnswersObj = new Array();
-    tstAnswersObj.push(createAnswer());
-    tstAnswersObj.push(createAnswer());
-    tstAnswersObj.push(createAnswer());
-    tstAnswersObj.push(createAnswer(true));
-    tstAnswersObj.push(createAnswer(true));
-    tstAnswersObj.push(createAnswer(true));
+    tstAnswersObj.push(createTstAnswerOject(testInfoId.toString()));
+    tstAnswersObj.push(createTstAnswerOject(testInfoId.toString()));
+    tstAnswersObj.push(createTstAnswerOject(testInfoId.toString()));
+    tstAnswersObj.push(createTstAnswerOject(testInfoId.toString(), true));
+    tstAnswersObj.push(createTstAnswerOject(testInfoId.toString(), true));
+    tstAnswersObj.push(createTstAnswerOject(testInfoId.toString(), true));
 
     result = await tstanswers.insertMany(tstAnswersObj);
 
@@ -231,17 +252,40 @@ describe("Servertest - testing http requests to the server", () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             start_date: start_date,
-            end_date: end_date
+            end_date: end_date,
           }),
         },
       );
 
       expect(res.status).toBe(200);
 
+      const data = await res.json();
+      expect(data).toBeDefined();
+      expect(Array.isArray(data)).toBe(true);
+      expect(data.length).toBe(10);
+
       // Clean up
       for (const id of testObjects) {
         await cleanTestInfo(id);
       }
+    });
+  });
+
+  describe("POST /api/test - Create a test", () => {
+    test.only("Creating a test info object in database", async () => {
+      //const tstObject = await createTestInfo();
+
+      const res = await fetch(`http://127.0.0.1:${PORT}/api/test`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: "Udo.Gerhards@gerhards.eu",
+        }),
+      });
+
+      expect(res.status).toBe(200);
+
+      //await cleanTestInfo(tstObject._id);
     });
   });
 });

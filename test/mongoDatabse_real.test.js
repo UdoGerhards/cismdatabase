@@ -141,7 +141,7 @@ describe("MongoDatabase_real", () => {
   /**
    * Create a full question object in collection "question" and collection "answer"
    */
-  createFullQuestion = async () => {
+  const createFullQuestion = async () => {
     qstObject = {
       _id: new ObjectId(),
       ID: 1,
@@ -177,7 +177,7 @@ describe("MongoDatabase_real", () => {
   /**
    * Deletes the full question object form "question" and "answer"
    */
-  cleanFullQuestion = async () => {
+  const cleanFullQuestion = async () => {
     result = await questionCol.deleteOne({
       _id: qstObject._id,
     });
@@ -193,7 +193,7 @@ describe("MongoDatabase_real", () => {
     return result;
   };
 
-  createTestInfo = async () => {
+  const createTestInfo = async () => {
     tstInfo = {
       _id: new ObjectId(),
       createdAT: new Date(),
@@ -207,7 +207,7 @@ describe("MongoDatabase_real", () => {
     return tstInfo;
   };
 
-  createTstAnswers = async (testInfoId) => {
+  const createTstAnswers = async (testInfoId) => {
     const createAnswer = (res) => {
       res = res != null ? true : false;
 
@@ -237,7 +237,7 @@ describe("MongoDatabase_real", () => {
     return tstAnswersObj;
   };
 
-  cleanTestInfo = async (idObject) => {
+  const cleanTestInfo = async (idObject) => {
     let id;
 
     if (idObject == null) {

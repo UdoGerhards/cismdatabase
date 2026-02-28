@@ -46,6 +46,12 @@
             "category": "defaultFile",
             "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/UserDAO.log"
         },
+        "LogManager": {
+            "type": "file",
+            "pattern": "-yyyy-MM-dd",
+            "category": "defaultFile",
+            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/Server.log"
+        },
         "Server": {
             "type": "file",
             "pattern": "-yyyy-MM-dd",
@@ -94,19 +100,19 @@
                 "default",
                 "UserDAO"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "LogManager": {
             "appenders": [
                 "default",
-                "defaultFile"
+                "LogManager"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "Server": {
             "appenders": [
                 "default",
-                "defaultFile"
+                "Server"
             ],
             "level": "DEBUG"
         },

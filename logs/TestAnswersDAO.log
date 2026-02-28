@@ -105,3 +105,6 @@
 [2026-02-28T11:40:20.621] [DEBUG] TestAnswersDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
 [2026-02-28T11:40:20.621] [DEBUG] TestAnswersDAO - TestAnswersDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
 [2026-02-28T11:40:20.621] [DEBUG] TestAnswersDAO - TestAnswersDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T11:51:57.044] [DEBUG] TestAnswersDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T11:51:57.044] [DEBUG] TestAnswersDAO - TestAnswersDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T11:51:57.044] [DEBUG] TestAnswersDAO - TestAnswersDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)

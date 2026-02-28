@@ -48,3 +48,5 @@
 [2026-02-28T11:40:19.709] [DEBUG] AnswerDAO - AnswerDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
 [2026-02-28T11:40:20.621] [DEBUG] AnswerDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
 [2026-02-28T11:40:20.621] [DEBUG] AnswerDAO - AnswerDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T11:51:57.044] [DEBUG] AnswerDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T11:51:57.044] [DEBUG] AnswerDAO - AnswerDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)

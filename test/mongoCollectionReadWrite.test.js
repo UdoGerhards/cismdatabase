@@ -1,4 +1,5 @@
 import { DB_STRING, DB_TEST_NAME } from "/config.js";
+import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadWrite from "/lib/database/dao/MongoCollectionReadWrite.js";
 import { MongoClient, ObjectId } from "mongodb";
 
@@ -27,6 +28,8 @@ describe("MongoCollectionReadWrite", () => {
     testCollection = db.collection("test");
 
     col = new MongoCollectionReadWrite(testCollection, validator);
+    await col.init(LogManager);
+
   });
 
   beforeEach(async () => {

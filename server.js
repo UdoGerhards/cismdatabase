@@ -1,4 +1,6 @@
+import { DB_CONNECTION, DB_NAME } from "../../config.js";
 import Server from "./lib/server/routes.js"
 
-const server = Server;
+const server = new Server(DB_NAME, DB_CONNECTION);
+server.init();
 server.listen(3000);

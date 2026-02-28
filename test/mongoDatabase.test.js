@@ -1,4 +1,5 @@
 import { DB_STRING, DB_TEST_NAME } from "/config.js";
+import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadWrite from "/lib/database/dao/MongoCollectionReadWrite.js";
 import { MongoClient, ObjectId } from "mongodb";
 
@@ -29,6 +30,7 @@ describe("MongoDatabase", () => {
 
     // Klasse direkt instanziieren — KEIN db aus server.js
     col = new MongoCollectionReadWrite(testCollection, testMetaValidator);
+    await col.init(LogManager);
   });
 
   beforeEach(async () => {

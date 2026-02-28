@@ -1,0 +1,1547 @@
+[2026-02-28T10:24:06.480] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:24:06.480] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:24:06.480] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:24:06.888] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:24:06.888] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:24:06.888] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:24:07.604] [DEBUG] TestDAO - Reading ID: 69a2b437910bcdf7c56b3079 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:24:07.636] [DEBUG] TestDAO - Updating object with ID: 69a2b437910bcdf7c56b3079 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:24:07.636] [DEBUG] TestDAO - {
+  "id": "69a2b437910bcdf7c56b3079",
+  "_id": "69a2b437910bcdf7c56b3079",
+  "createdAT": "2026-02-28T09:24:07.400Z",
+  "name": "officiis",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:24:08.629] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:24:08.629] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:24:45.929] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:24:45.929] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:24:45.929] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:24:47.269] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:24:47.269] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:24:47.269] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:24:47.759] [DEBUG] TestDAO - Reading ID: 69a2b45fb621f2388455a1d7 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:24:47.845] [DEBUG] TestDAO - Updating object with ID: 69a2b45fb621f2388455a1d7 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:24:47.845] [DEBUG] TestDAO - {
+  "id": "69a2b45fb621f2388455a1d7",
+  "_id": "69a2b45fb621f2388455a1d7",
+  "createdAT": "2026-02-28T09:24:47.673Z",
+  "name": "itaque",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:24:48.391] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:24:48.391] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:26:13.556] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:26:13.556] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:26:13.556] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:26:14.812] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:26:14.812] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:26:14.812] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:26:15.074] [DEBUG] TestDAO - Reading ID: 69a2b4b76bb28c5d0e95b138 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:26:15.099] [DEBUG] TestDAO - Updating object with ID: 69a2b4b76bb28c5d0e95b138 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:26:15.099] [DEBUG] TestDAO - {
+  "id": "69a2b4b76bb28c5d0e95b138",
+  "_id": "69a2b4b76bb28c5d0e95b138",
+  "createdAT": "2026-02-28T09:26:15.041Z",
+  "name": "rerum",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:26:15.437] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:26:15.437] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:26:20.918] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:26:20.918] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:26:20.919] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:26:21.487] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:26:21.487] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:26:21.487] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:26:21.743] [DEBUG] TestDAO - Reading ID: 69a2b4bd1810a89641d6ee17 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:26:21.832] [DEBUG] TestDAO - Updating object with ID: 69a2b4bd1810a89641d6ee17 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:26:21.832] [DEBUG] TestDAO - {
+  "id": "69a2b4bd1810a89641d6ee17",
+  "_id": "69a2b4bd1810a89641d6ee17",
+  "createdAT": "2026-02-28T09:26:21.677Z",
+  "name": "dolores",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:26:22.278] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:26:22.278] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:28:30.016] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:28:30.017] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:28:30.017] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:28:30.966] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:28:30.967] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:28:30.967] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:28:31.327] [DEBUG] TestDAO - Reading ID: 69a2b53f87f697dc5f2e0523 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:28:31.354] [DEBUG] TestDAO - Updating object with ID: 69a2b53f87f697dc5f2e0523 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:28:31.355] [DEBUG] TestDAO - {
+  "id": "69a2b53f87f697dc5f2e0523",
+  "_id": "69a2b53f87f697dc5f2e0523",
+  "createdAT": "2026-02-28T09:28:31.270Z",
+  "name": "eius",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:28:31.973] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:28:31.973] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:29:41.453] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:29:41.453] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:29:41.453] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:29:41.777] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:29:41.777] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:29:41.777] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:29:42.336] [DEBUG] TestDAO - Reading ID: 69a2b58685e88cc834f16e09 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:29:42.361] [DEBUG] TestDAO - Updating object with ID: 69a2b58685e88cc834f16e09 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:29:42.361] [DEBUG] TestDAO - {
+  "id": "69a2b58685e88cc834f16e09",
+  "_id": "69a2b58685e88cc834f16e09",
+  "createdAT": "2026-02-28T09:29:42.303Z",
+  "name": "officiis",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:29:42.723] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:29:42.723] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:33:40.209] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:33:40.209] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:33:40.209] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:33:41.328] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:33:41.328] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:33:41.328] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:33:41.721] [DEBUG] TestDAO - Reading ID: 69a2b6755ae95d35dd2c8fe7 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:33:41.754] [DEBUG] TestDAO - Updating object with ID: 69a2b6755ae95d35dd2c8fe7 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:33:41.755] [DEBUG] TestDAO - {
+  "id": "69a2b6755ae95d35dd2c8fe7",
+  "_id": "69a2b6755ae95d35dd2c8fe7",
+  "createdAT": "2026-02-28T09:33:41.686Z",
+  "name": "exercitationem",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:33:42.416] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:33:42.416] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:33:49.091] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:33:49.091] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:33:49.091] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:33:50.137] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:33:50.137] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:33:50.137] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:33:50.478] [DEBUG] TestDAO - Reading ID: 69a2b67eaa2eeea9d9c6bc44 read(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:74:23)
+[2026-02-28T10:33:50.518] [DEBUG] TestDAO - Updating object with ID: 69a2b67eaa2eeea9d9c6bc44 update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:54:23)
+[2026-02-28T10:33:50.519] [DEBUG] TestDAO - {
+  "id": "69a2b67eaa2eeea9d9c6bc44",
+  "_id": "69a2b67eaa2eeea9d9c6bc44",
+  "createdAT": "2026-02-28T09:33:50.446Z",
+  "name": "officiis",
+  "wrong": 3,
+  "user": "0000-0000-0000-0000",
+  "correct": 3
+} update(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:55:23)
+[2026-02-28T10:33:51.271] [DEBUG] TestDAO - Getting aggregation:  aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-28T10:33:51.272] [DEBUG] TestDAO - [
+  {
+    "$match": {
+      "createdAT": {
+        "$gte": "2026-02-27T23:00:00.000Z",
+        "$lte": "2026-02-28T22:59:59.999Z"
+      }
+    }
+  },
+  {
+    "$lookup": {
+      "from": "test_answers",
+      "let": {
+        "testIdStr": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$test_id",
+                "$$testIdStr"
+              ]
+            }
+          }
+        },
+        {
+          "$lookup": {
+            "from": "question",
+            "let": {
+              "qid": "$question_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$qid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$lookup": {
+                  "from": "answer",
+                  "let": {
+                    "qID": "$ID"
+                  },
+                  "pipeline": [
+                    {
+                      "$match": {
+                        "$expr": {
+                          "$eq": [
+                            "$question",
+                            "$$qID"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "$project": {
+                        "_id": 0,
+                        "c": 1,
+                        "text": 1
+                      }
+                    }
+                  ],
+                  "as": "answers"
+                }
+              },
+              {
+                "$addFields": {
+                  "correct_answer": {
+                    "$let": {
+                      "vars": {
+                        "match": {
+                          "$filter": {
+                            "input": "$answers",
+                            "cond": {
+                              "$eq": [
+                                "$$this.c",
+                                "$correct"
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "in": {
+                        "$arrayElemAt": [
+                          "$$match.text",
+                          0
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "ID": 1,
+                  "question": 1,
+                  "correct": 1,
+                  "correct_answer": 1,
+                  "answers": 1
+                }
+              }
+            ],
+            "as": "question"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$question",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$lookup": {
+            "from": "answer",
+            "let": {
+              "aid": "$answer_id"
+            },
+            "pipeline": [
+              {
+                "$match": {
+                  "$expr": {
+                    "$eq": [
+                      "$_id",
+                      {
+                        "$toObjectId": "$$aid"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$project": {
+                  "_id": 0,
+                  "text": 1
+                }
+              }
+            ],
+            "as": "answer"
+          }
+        },
+        {
+          "$unwind": {
+            "path": "$answer",
+            "preserveNullAndEmptyArrays": true
+          }
+        },
+        {
+          "$addFields": {
+            "user_answer": "$answer.text"
+          }
+        },
+        {
+          "$project": {
+            "answer": 0
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-28T10:38:23.707] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:38:23.707] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:38:23.707] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:38:24.429] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:38:24.429] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:38:24.429] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:39:24.905] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:39:24.905] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:39:24.905] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:57:16.302] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:57:16.302] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:57:16.302] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T10:57:36.510] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T10:57:36.510] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T10:57:36.510] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T11:35:04.473] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T11:35:04.473] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T11:35:04.473] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T11:39:50.123] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T11:39:50.123] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T11:39:50.123] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T11:40:19.709] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T11:40:19.709] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T11:40:19.709] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)
+[2026-02-28T11:40:20.621] [DEBUG] TestDAO - Logger initilized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-28T11:40:20.621] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-28T11:40:20.621] [DEBUG] TestDAO - TestDAO initialisiert! init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadWrite.js:28:21)

@@ -1,4 +1,5 @@
 import { DB_STRING } from "/config.js";
+import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadOnly from "/lib/database/dao/MongoCollectionReadOnly.js";
 import { MongoClient, ObjectId } from "mongodb";
 
@@ -16,6 +17,7 @@ describe("MongoCollectionReadOnly", () => {
     questionCollection = db.collection("question");
 
     col = new MongoCollectionReadOnly(questionCollection);
+    await col.init(LogManager);
   });
 
   afterAll(async () => {

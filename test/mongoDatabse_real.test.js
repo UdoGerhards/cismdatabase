@@ -1,4 +1,5 @@
 import { DB_STRING, DB_TEST_NAME } from  "/config.js";
+import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadOnly from  "/lib/database/dao/MongoCollectionReadOnly.js";
 import MongoCollectionReadWrite from  "/lib/database/dao/MongoCollectionReadWrite.js";
 import MongoDatabase from  "/lib/database/MongoDatabase.js";
@@ -34,13 +35,18 @@ describe("MongoDatabase_real", () => {
 
     database = client.db(DB_TEST_NAME);
 
-    await MongoDatabase.init(DB_STRING, DB_TEST_NAME);
+    await MongoDatabase.init(DB_STRING, DB_TEST_NAME, LogManager);
     //await MongoDatabase.connect();
 
     questionCol = database.collection("question");
     question = new MongoCollectionReadOnly(questionCol);
+    await question.init(LogManager);
+
     answerCol = database.collection("answer");
+
     answer = new MongoCollectionReadOnly(answerCol);
+    await answer.init(LogManager);
+
     tst = database.collection("test");
 
     const testMetaValidator = (info) => {
@@ -76,6 +82,7 @@ describe("MongoDatabase_real", () => {
     };
 
     testInfoCol = new MongoCollectionReadWrite(tst, testMetaValidator);
+    await testInfoCol.init(LogManager);
 
     tstanswers = database.collection("test_answers");
     const testAnswerColValidator = (testAnswer) => {
@@ -110,15 +117,17 @@ describe("MongoDatabase_real", () => {
       if (typeof testAnswer.correct !== "boolean") {
         throw new Error("Invalid correct: expected boolean");
       }
+    }
 
       testAnswerCol = new MongoCollectionReadWrite(
         tstanswers,
         testMetaValidator,
       );
 
+      await testAnswerCol.init(LogManager);
+
       return true; // optional
-    };
-  });
+    });
 
   /**
    * Will be executed after all tests are finished
@@ -283,7 +292,7 @@ describe("MongoDatabase_real", () => {
       try {
         const qstId = qstObject._id.toString();
 
-        result = await MongoDatabase.spec_getQuestionFull(qstId);
+        const result = await MongoDatabase.spec_getQuestionFull(qstId);
 
         expect(result).not.toBeNull();
         expect(result).toHaveProperty(

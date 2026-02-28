@@ -1,0 +1,3274 @@
+[2026-02-27T13:15:17.252] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T13:15:17.252] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T13:15:17.433] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T13:15:17.433] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a18ad5e3f3fac178407e63"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T13:16:29.416] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T13:16:29.416] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T13:16:29.575] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T13:16:29.575] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a18b1dfbea223bb954c462"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T13:16:42.493] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T13:16:42.493] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T13:16:42.637] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T13:16:42.637] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a18b2a670d67a04d07b01f"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:41:51.357] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:41:51.357] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:41:51.838] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:41:51.838] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1c94fe82722b6c294a402"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:51:57.813] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:51:57.814] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:51:58.326] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:51:58.326] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cbaea68594e69a1d6e03"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:54:06.453] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:54:06.453] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:54:06.596] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:54:06.596] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cc2e3bf8c463b345f4b0"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:54:26.102] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:54:26.102] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:54:26.252] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:54:26.252] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cc42dd277a49af860a62"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:54:57.762] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:54:57.762] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:54:58.115] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:54:58.115] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cc6165476a20deebb123"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:57:28.272] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:57:28.272] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:57:28.917] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:57:28.917] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ccf889495ceb7fa5ae24"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:57:44.492] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:57:44.492] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:57:44.667] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:57:44.667] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cd0891068bc9e438caa6"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:58:11.724] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:58:11.724] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:58:11.900] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:58:11.900] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cd235386dd54e8f9ff66"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:58:21.557] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:58:21.557] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:58:22.554] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:58:22.554] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cd2edda84850fd63951a"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:58:47.485] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:58:47.485] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:58:47.754] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:58:47.754] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cd47a15e1bdf5febb89e"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:59:37.639] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:59:37.640] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:59:37.910] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:59:37.910] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T17:59:38.057] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T17:59:38.057] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cd7a37f321708091e4ac"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T17:59:39.151] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T17:59:39.152] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:00:54.055] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:00:54.055] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:00:54.346] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:00:54.346] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cdc6d00bafd04b892c70"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:00:59.017] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:00:59.018] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:00:59.377] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:00:59.377] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cdcb854c81320ac0130e"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:01:42.887] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:01:42.887] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:01:43.195] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:01:43.195] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cdf764b43f961976a6a9"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:02:04.801] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:02:04.801] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:02:05.415] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:02:05.415] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ce0d4ea39c0f52e6c46f"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:05:30.637] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:05:30.637] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:05:30.996] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:05:30.996] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ceda147b87ec923c8aaa"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:05:49.476] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:05:49.476] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:05:49.739] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:05:49.739] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ceed7022ab2de54156e4"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:06:01.392] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:06:01.392] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:06:01.746] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:06:01.746] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cef9daff7ccb2bc81f4c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:06:35.332] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:06:35.332] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:06:35.507] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:06:35.508] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cf1b21bd0e5a28983c1c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:06:41.487] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:06:41.487] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:06:41.616] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:06:41.616] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cf21e8430be298732926"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:07:58.803] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:07:58.803] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:07:58.932] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:07:58.932] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1cf6e5e813e4c0cb82a46"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:12:46.088] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:12:46.088] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:12:46.358] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:12:46.358] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d08e8768c739822f74bc"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:14:05.379] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:14:05.379] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:14:06.478] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:14:06.478] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:14:06.603] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:14:06.603] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d0dec9c47dbaef7463ea"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:14:19.540] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:14:19.540] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:14:20.607] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:14:20.608] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:14:20.872] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:14:20.872] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d0ec427fe5dcea060165"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:14:55.455] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:14:55.455] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:14:56.556] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:14:56.556] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:14:56.824] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:14:56.824] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d110f0fe91f465ac3b1a"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:15:14.254] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:15:14.254] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:15:15.358] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:15:15.358] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:15:15.496] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:15:15.496] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d12304522d0b3d1559c2"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:18:47.475] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:18:47.475] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:18:47.731] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:18:47.731] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d1f74481aacc9d41dd78"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:19:07.751] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:19:07.751] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:19:07.879] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:19:07.880] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d20b6e48a0f2f4117a56"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:20:34.389] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:20:34.389] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:20:34.947] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:20:34.947] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d2626dcd9e81d9bf7d31"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:21:32.337] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:21:32.337] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:21:32.474] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:21:32.475] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d29cfbb93dd4a18b6424"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:22:38.669] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:22:38.669] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:22:39.717] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:22:39.717] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:22:39.879] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:22:39.879] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d2dfd5e2fe041083a03d"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:22:47.901] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:22:47.901] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:23:53.687] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:23:53.688] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:23:54.016] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:23:54.016] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d329096167efad74559c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:24:23.776] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:24:23.776] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:24:23.921] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:24:23.921] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d34747b6fa6d07c147b3"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:24:45.900] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:24:45.900] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:24:47.012] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:24:47.013] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:24:47.157] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:24:47.157] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d35f9a7a39c4028e336c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:24:50.387] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:24:50.387] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:25:32.648] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:25:32.648] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:25:33.594] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:25:33.594] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:25:33.967] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:25:33.967] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d38d8f40d546f1f8534f"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:25:40.430] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:25:40.431] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:29:18.449] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:29:18.450] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:29:19.095] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:29:19.095] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:29:19.666] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:29:19.666] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d46fc2fc536c95767405"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:29:21.941] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:29:21.941] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:30:47.453] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:30:47.453] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:30:47.600] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:30:47.600] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d4c7e80dd0d746f2f250"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:31:06.299] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:31:06.299] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:31:06.436] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:31:06.436] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d4da44a561243a51e6df"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:31:14.281] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:31:14.282] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:31:14.416] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:31:14.416] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d4e23188d2528854ae00"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:31:29.641] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:31:29.641] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:31:29.780] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:31:29.780] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d4f154ce3b43c47f9154"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:31:43.769] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:31:43.769] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:31:44.804] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:31:44.804] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:31:44.944] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:31:44.944] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d50022647fb56f1f32aa"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:31:59.395] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:31:59.395] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:00.171] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:00.172] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:00.295] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:32:00.295] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d510ead9e20192b84d78"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:32:04.873] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:04.873] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:05.799] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:05.799] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:05.931] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:32:05.931] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d5156017b5a6ea1b09df"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:32:15.272] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:15.272] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:16.343] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:16.343] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:16.696] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:32:16.697] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d52063f534c521f9cb0f"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:32:23.591] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:23.591] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:24.640] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:24.640] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:32:24.802] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:32:24.802] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d528b19bb56ae5355452"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:32:28.743] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:32:28.743] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:33:14.042] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:33:14.042] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:33:15.113] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:33:15.113] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:33:15.310] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:33:15.310] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d55b8e34261126b28b45"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:33:16.216] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:33:16.216] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:34:59.369] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:34:59.369] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:35:00.391] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:35:00.391] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:35:00.524] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:35:00.524] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d5c49a336e0c5f16c30c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:35:54.035] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:35:54.035] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:35:54.961] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:35:54.961] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:35:55.181] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:35:55.181] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d5fbd8467eb9e585374a"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:36:36.297] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:36:36.297] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:36:37.457] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:36:37.457] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:36:37.818] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:36:37.818] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d6255ddf4e4f985729cf"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:38:37.275] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:38:37.275] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:38:38.295] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:38:38.295] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:38:38.432] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:38:38.432] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d69e7d9164d94d2555bc"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:38:40.442] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:38:40.442] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:41:52.630] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:41:52.630] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:41:53.785] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:41:53.785] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:41:54.372] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:41:54.372] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d762bd234c44b02d9ab7"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:42:14.163] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:42:14.163] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:42:44.106] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:42:44.107] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:42:45.252] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:42:45.252] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:42:45.680] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:42:45.680] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d795f3afaa98548acad9"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:42:46.406] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:42:46.406] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:48:05.417] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:48:05.417] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:48:38.078] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:48:38.078] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:48:39.284] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:48:39.285] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:48:39.524] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:48:39.524] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d8f79b7924d22081dcea"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:48:40.022] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:48:40.022] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:49:05.563] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:49:05.564] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:49:06.704] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:49:06.704] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:49:07.115] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:49:07.115] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d912f3954c580122504c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:49:09.004] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:49:09.004] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:49:52.763] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:49:52.763] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:49:53.356] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:49:53.357] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:49:53.903] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:49:53.903] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d9416a9b0729d340b9e2"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:49:57.654] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:49:57.655] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:50:39.341] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:50:39.341] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:50:40.763] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:50:40.763] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:50:41.016] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:50:41.016] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1d970daa118a5be3a954a"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:50:45.785] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:50:45.785] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:54:19.193] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:54:19.193] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:54:19.724] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:54:19.724] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:54:19.873] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:54:19.873] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1da4b65f741ff8943c5f6"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:54:25.018] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:54:25.019] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:56:21.249] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:56:21.249] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:56:21.404] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:56:21.404] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dac5dd9805fd20525564"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:57:35.990] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:57:35.990] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:57:36.555] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:57:36.555] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1db10a2f01b189a10ccbd"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:59:12.205] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:59:12.205] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:59:12.521] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:59:12.521] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1db702d9a6871e785eb98"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T18:59:47.575] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T18:59:47.575] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T18:59:47.833] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T18:59:47.833] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1db933927cc897fa0732b"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:00:23.826] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:00:23.826] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:00:24.493] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:00:24.493] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dbb8895cdc733a272cc1"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:00:53.943] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:00:53.943] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:00:54.286] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:00:54.286] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dbd6901466153ff9996b"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:01:49.601] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:01:49.602] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:01:49.742] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:01:49.742] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dc0db6da956accf80b04"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:02:38.272] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:02:38.272] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:02:39.297] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:02:39.298] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:02:39.438] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:02:39.438] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dc3f5ac7d22cdc358d03"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:02:45.460] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:02:45.460] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:02:46.568] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:02:46.568] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:02:46.723] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:02:46.723] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dc46e55e536e9704f6ef"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:02:58.559] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:02:58.559] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:02:58.811] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:02:58.811] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dc5296c6fb749ce270cc"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:03:01.122] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:03:01.122] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:03:35.943] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:03:35.943] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:04:08.437] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:04:08.438] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:04:09.616] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:04:09.616] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:04:09.814] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:04:09.814] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dc99f25244379e59d06c"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:04:16.803] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:04:16.803] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:04:30.404] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:04:30.404] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:04:41.676] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:04:41.676] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:05:11.876] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:05:11.876] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:05:12.593] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:05:12.594] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:05:12.805] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:05:12.805] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dcd8ee6d8fe5a217be1b"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:05:28.062] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:05:28.062] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:06:52.949] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:06:52.949] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:06:53.878] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:06:53.878] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:06:54.245] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:06:54.245] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dd3ecd866da16bbe39ab"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:06:57.430] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:06:57.431] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:07:11.329] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:07:11.329] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:07:12.610] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:07:12.610] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:07:13.068] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:07:13.068] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dd502dc355af1c89d4f0"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:07:17.558] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:07:17.558] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:09:25.504] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:09:25.504] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:09:25.860] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:09:25.860] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ddd5afd91bc657f1e3e1"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:09:55.722] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:09:55.722] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:09:55.854] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:09:55.854] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ddf37ecc274b7eca342d"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:10:02.487] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:10:02.487] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:10:03.499] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:10:03.499] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:10:03.655] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:10:03.655] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1ddfbaccad9de648bb65d"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:10:09.721] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:10:09.721] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:11:04.843] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:11:04.843] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:11:05.922] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:11:05.922] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:11:06.063] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:11:06.063] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1de3a300ee4af8122f5cf"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:11:11.702] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:11:11.702] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:11:50.381] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:11:50.381] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:11:51.433] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:11:51.433] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:11:51.575] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:11:51.575] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1de67910c5e145c4b3393"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:11:53.323] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:11:53.323] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:12:57.474] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:12:57.474] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:12:58.496] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:12:58.497] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:12:58.757] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:12:58.757] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1deaaf24864fabb7b57fc"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:13:07.933] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:13:07.933] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:14:15.223] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:14:15.223] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:14:15.987] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:14:15.988] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:14:16.195] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:14:16.195] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1def8d27a974d71ad261f"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:14:18.135] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:14:18.135] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:14:28.479] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:14:28.479] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:14:29.530] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:14:29.530] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:14:29.809] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:14:29.809] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1df0586d01ce4735f5ecc"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:17:07.341] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:17:07.341] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:17:08.361] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:17:08.361] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:17:08.738] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:17:08.739] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dfa471a2594b326bc0bc"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:17:14.816] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:17:14.816] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:17:51.042] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:17:51.042] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:17:52.077] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:17:52.077] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:17:52.648] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:17:52.648] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1dfd06260091b909a15b9"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:17:55.135] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:17:55.136] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:22:46.768] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:22:46.768] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:22:49.224] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:22:49.224] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:22:49.458] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:22:49.458] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e0f94bf66d3329cbcb6d"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:23:51.492] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:23:51.492] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:23:53.785] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:23:53.786] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:23:54.232] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:23:54.232] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e13a233c75358d468a47"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:23:56.135] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:23:56.135] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:24:21.884] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:24:21.885] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:24:23.368] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:24:23.368] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:24:23.625] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:24:23.626] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e157d9e5a804c8af4737"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:24:25.676] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:24:25.676] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:22.974] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:22.974] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:23.989] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:23.989] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:24.126] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:25:24.126] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e194e49823254c0034e9"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:25:28.600] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:28.600] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:40.486] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:40.486] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:41.501] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:41.501] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:41.877] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:25:41.877] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e1a586e1d7e41c53388d"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:25:54.873] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:54.873] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:56.018] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:25:56.018] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:25:56.163] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:25:56.163] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e1b4b9f3772ec0ad91c8"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:27:16.130] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:27:16.130] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:27:17.218] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:27:17.218] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:27:17.620] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:27:17.620] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e205e483d617a671fc97"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:27:20.232] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:27:20.233] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:03.222] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:03.222] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:04.014] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:04.014] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:04.158] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:28:04.158] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e234d6cecb8da0add1a4"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:28:07.725] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:07.726] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:24.019] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:24.019] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:25.210] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:25.210] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:25.426] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:28:25.426] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e249f5b01a6c1f0f3e9e"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)
+[2026-02-27T19:28:49.339] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:49.340] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:49.708] [DEBUG] QuestionDAO - Logger initilized init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
+[2026-02-27T19:28:49.708] [DEBUG] QuestionDAO - QuestionDAO initialisiert! init(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:28:21)
+[2026-02-27T19:28:49.864] [DEBUG] QuestionDAO - Getting aggregation:  aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:169:23)
+[2026-02-27T19:28:49.864] [DEBUG] QuestionDAO - [
+  {
+    "$match": {
+      "_id": "69a1e2614c8be3a9269e8321"
+    }
+  },
+  {
+    "$lookup": {
+      "from": "answer",
+      "let": {
+        "qid": {
+          "$toString": "$_id"
+        }
+      },
+      "pipeline": [
+        {
+          "$match": {
+            "$expr": {
+              "$eq": [
+                "$question_id",
+                "$$qid"
+              ]
+            }
+          }
+        }
+      ],
+      "as": "answers"
+    }
+  }
+] aggregate(/home/udo/Dokumente/Development/Node/cismdatabase/lib/database/dao/MongoCollectionReadOnly.js:170:23)

@@ -1,4 +1,4 @@
-import { DB_STRING, DB_TEST_NAME } from  "/config.js";
+import { DB_CONNECTION, DB_NAME } from  "/config.js";
 import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadOnly from  "/lib/database/dao/MongoCollectionReadOnly.js";
 import MongoCollectionReadWrite from  "/lib/database/dao/MongoCollectionReadWrite.js";
@@ -30,12 +30,12 @@ describe("MongoDatabase_real", () => {
    * Will be executed before all tests
    */
   beforeAll(async () => {
-    client = new MongoClient(DB_STRING);
+    client = new MongoClient(DB_CONNECTION);
     await client.connect();
 
-    database = client.db(DB_TEST_NAME);
+    database = client.db(DB_NAME);
 
-    await MongoDatabase.init(DB_STRING, DB_TEST_NAME, LogManager);
+    await MongoDatabase.init(DB_CONNECTION, DB_NAME, LogManager);
     //await MongoDatabase.connect();
 
     questionCol = database.collection("question");
@@ -66,8 +66,8 @@ describe("MongoDatabase_real", () => {
         throw new Error("Invalid user: expected string");
       }
 
-      if (typeof info.createdAT !== "object" || info.createdAT === null) {
-        throw new Error("Invalid createdAT: expected Date object");
+      if (typeof info.createdAt !== "object" || info.createdAt === null) {
+        throw new Error("Invalid createdAt: expected Date object");
       }
 
       if (typeof info.correct !== "number") {
@@ -196,7 +196,7 @@ describe("MongoDatabase_real", () => {
   const createTestInfo = async () => {
     tstInfo = {
       _id: new ObjectId(),
-      createdAT: new Date(),
+      _createdAt: new Date(),
       name: faker.lorem.word(20),
       wrong: 0,
       user: "0000-0000-0000-0000",
@@ -216,11 +216,12 @@ describe("MongoDatabase_real", () => {
 
       return {
         _id: new ObjectId(),
+        _createdAt: new Date(),
         test_id: testInfoId.toString(),
         question_id: fakeQuestionId.toString(),
         answer_id: fakeAnswerId.toString(),
         correct: res,
-        createdAT: new Date(),
+        createdAt: new Date(),
       };
     };
 

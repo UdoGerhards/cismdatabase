@@ -3,6 +3,8 @@ import Server from "../lib/server/routes.js";
 import { MongoClient, ObjectId } from "mongodb";
 import { faker } from "@faker-js/faker";
 
+jest.setTimeout(10000); // 10 Sekunden
+
 describe("Servertest - testing http requests to the server", () => {
   let server;
   const PORT = 3000;
@@ -79,7 +81,7 @@ describe("Servertest - testing http requests to the server", () => {
   const createTestInfoObject = () => {
     return {
       _id: new ObjectId(),
-      createdAT: new Date(),
+      _createdAt: new Date(),
       name: faker.lorem.word(20),
       wrong: 0,
       user: "0000-0000-0000-0000",
@@ -112,28 +114,11 @@ describe("Servertest - testing http requests to the server", () => {
       question_id: fakeQuestionId.toString(),
       answer_id: fakeAnswerId.toString(),
       correct: res,
-      createdAT: new Date(),
+      _createdAt: new Date(),
     };
   };
 
   const createTstAnswers = async (testInfoId) => {
-    /**
-    const createAnswer = (res) => {
-      res = res != null ? true : false;
-
-      const fakeQuestionId = new ObjectId();
-      const fakeAnswerId = new ObjectId();
-
-      return {
-        _id: new ObjectId(),
-        test_id: testInfoId.toString(),
-        question_id: fakeQuestionId.toString(),
-        answer_id: fakeAnswerId.toString(),
-        correct: res,
-        createdAT: new Date(),
-      };
-    };  */
-
     tstAnswersObj = new Array();
     tstAnswersObj.push(createTstAnswerOject(testInfoId.toString()));
     tstAnswersObj.push(createTstAnswerOject(testInfoId.toString()));
@@ -193,37 +178,39 @@ describe("Servertest - testing http requests to the server", () => {
     test("POST /api/question", async () => {
       let questionObjects = Array();
 
-      for (idx = 0; idx < 10; idx++) {
-        let questionObject = await createFullQuestion();
-        questionObjects.push(questionObject._id);
-      }
+      try {
+        for (idx = 0; idx < 10; idx++) {
+          let questionObject = await createFullQuestion();
+          questionObjects.push(questionObject._id);
+        }
 
-      const res = await fetch(`http://127.0.0.1:${PORT}/api/question`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: "{}",
-      });
+        const res = await fetch(`http://127.0.0.1:${PORT}/api/question`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: "{}",
+        });
 
-      expect(res.status).toBe(200);
+        expect(res.status).toBe(200);
 
-      const data = await res.json();
+        const data = await res.json();
 
-      expect(data).not.toBeNull();
-      expect(data._id).toBeDefined();
-      expect(typeof data._id).toBe("string");
+        expect(data).not.toBeNull();
+        expect(data._id).toBeDefined();
+        expect(typeof data._id).toBe("string");
 
-      expect(data.question).toBeDefined();
-      expect(typeof data.question).toBe("string");
+        expect(data.question).toBeDefined();
+        expect(typeof data.question).toBe("string");
 
-      expect(data.answers).toBeDefined();
-      expect(typeof data.answers).toBe("object");
-      expect(data.answers.length).toBe(4);
+        expect(data.answers).toBeDefined();
+        expect(typeof data.answers).toBe("object");
+        expect(data.answers.length).toBe(4);
 
-      expect(data.correct).toBeDefined();
-      expect(typeof data.correct).toBe("string");
-
-      for (const id of questionObjects) {
-        await cleanFullQuestion(id);
+        expect(data.correct).toBeDefined();
+        expect(typeof data.correct).toBe("string");
+      } finally {
+        for (const id of questionObjects) {
+          await cleanFullQuestion(id);
+        }
       }
     });
   });
@@ -232,50 +219,52 @@ describe("Servertest - testing http requests to the server", () => {
     test("POST /api/get/test/for/period", async () => {
       // Preparation
       let testObjects = Array();
-      for (idx = 0; idx < 10; idx++) {
-        let testObject = await createTestInfo();
-        testObjects.push(testObject._id);
 
-        await createTstAnswers(testObject._id);
-      }
+      try {
+        for (idx = 0; idx < 10; idx++) {
+          let testObject = await createTestInfo();
+          testObjects.push(testObject._id);
 
-      const start_date = new Date();
-      start_date.setHours(0, 0, 0, 0);
+          await createTstAnswers(testObject._id);
+        }
 
-      const end_date = new Date();
-      end_date.setHours(23, 59, 59, 999);
+        const start_date = new Date();
+        start_date.setHours(0, 0, 0, 0);
 
-      const res = await fetch(
-        `http://127.0.0.1:${PORT}/api/get/test/for/period`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            start_date: start_date,
-            end_date: end_date,
-          }),
-        },
-      );
+        const end_date = new Date();
+        end_date.setHours(23, 59, 59, 999);
 
-      expect(res.status).toBe(200);
+        const res = await fetch(
+          `http://127.0.0.1:${PORT}/api/get/test/for/period`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              start_date: start_date,
+              end_date: end_date,
+            }),
+          },
+        );
 
-      const data = await res.json();
-      expect(data).toBeDefined();
-      expect(Array.isArray(data)).toBe(true);
-      expect(data.length).toBe(10);
+        expect(res.status).toBe(200);
 
-      // Clean up
-      for (const id of testObjects) {
-        await cleanTestInfo(id);
+        const data = await res.json();
+
+        expect(data).toBeDefined();
+        expect(Array.isArray(data)).toBe(true);
+        expect(data.length).toBe(10);
+      } finally {
+        // Clean up
+        for (const id of testObjects) {
+          await cleanTestInfo(id);
+        }
       }
     });
   });
 
   describe("POST /api/test - Create a test", () => {
-    test.only("Creating a test info object in database", async () => {
-      //const tstObject = await createTestInfo();
-
-      const res = await fetch(`http://127.0.0.1:${PORT}/api/test`, {
+    test("Creating a test info object in database", async () => {
+      let res = await fetch(`http://127.0.0.1:${PORT}/api/test`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -285,7 +274,82 @@ describe("Servertest - testing http requests to the server", () => {
 
       expect(res.status).toBe(200);
 
-      //await cleanTestInfo(tstObject._id);
+      const data = await res.json();
+
+      expect(data).toBeDefined();
+      expect(typeof data).toBe("object");
+      expect(data).toHaveProperty("_id", "name", "correct", "wrong", "user");
+
+      await cleanTestInfo(new ObjectId(data._id));
+    });
+  });
+
+  describe("POST /api/test/answer- Save an answer to a test", () => {
+    test("Creating a test info object in database", async () => {
+      let data;
+
+      try {
+        let res = await fetch(`http://127.0.0.1:${PORT}/api/test`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: "Udo.Gerhards@gerhards.eu",
+          }),
+        });
+
+        expect(res.status).toBe(200);
+
+        data = await res.json();
+
+        expect(data).toBeDefined();
+        expect(typeof data).toBe("object");
+        expect(data).toHaveProperty("_id", "name", "correct", "wrong", "user");
+
+        let answer = createTstAnswerOject(data._id.toString());
+
+        res = await fetch(`http:127.0.0.1:${PORT}/api/test/answer`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            testId: answer.test_id,
+            answerId: answer.answer_id,
+            questionId: answer.question_id,
+            correct: true,
+          }),
+        });
+
+        expect(res.status).toBe(200);
+      } finally {
+        await cleanTestInfo(new ObjectId(data._id));
+      }
+    });
+  });
+
+  describe("POST /api/test/results -  Calculates a test result and return it to the caller", () => {
+    test("Creating a test info object in database", async () => {
+      let test = null;
+      try {
+        test = await createTestInfo();
+        await createTstAnswers(test._id);
+
+        let res = await fetch(`http://127.0.0.1:${PORT}/api/test/result`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: test._id,
+          }),
+        });
+
+        expect(res.status).toBe(200);
+
+        const data = await res.json();
+
+        expect(data).toBeDefined();
+        expect(typeof data).toBe("object");
+        expect(data).toHaveProperty("_id", "name", "correct", "wrong", "user");
+      } finally {
+        await cleanTestInfo(test._id);
+      }
     });
   });
 });

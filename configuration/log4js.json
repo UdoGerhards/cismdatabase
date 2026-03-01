@@ -62,66 +62,57 @@
     "categories": {
         "MongoDatabase": {
             "appenders": [
-                "default",
                 "MongoDatabase"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "QuestionDAO": {
             "appenders": [
-                "default",
                 "QuestionDAO"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "AnswerDAO": {
             "appenders": [
-                "default",
                 "AnswerDAO"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "TestDAO": {
             "appenders": [
-                "default",
                 "TestDAO"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "TestAnswersDAO": {
             "appenders": [
-                "default",
                 "TestAnswersDAO"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "UserDAO": {
             "appenders": [
-                "default",
                 "UserDAO"
             ],
             "level": "INFO"
         },
         "LogManager": {
             "appenders": [
-                "default",
                 "LogManager"
             ],
             "level": "INFO"
         },
         "Server": {
             "appenders": [
-                "default",
                 "Server"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         },
         "default": {
             "appenders": [
-                "default",
                 "defaultFile"
             ],
-            "level": "DEBUG"
+            "level": "INFO"
         }
     }
 }

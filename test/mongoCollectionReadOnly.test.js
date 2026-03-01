@@ -1,4 +1,4 @@
-import { DB_STRING } from "/config.js";
+import { DB_CONNECTION } from "/config.js";
 import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadOnly from "/lib/database/dao/MongoCollectionReadOnly.js";
 import { MongoClient, ObjectId } from "mongodb";
@@ -10,7 +10,7 @@ describe("MongoCollectionReadOnly", () => {
   let col; // Instanz deiner Klasse
 
   beforeAll(async () => {
-    client = new MongoClient(DB_STRING);
+    client = new MongoClient(DB_CONNECTION);
     await client.connect();
 
     db = client.db("cism"); // oder dein DB-Name

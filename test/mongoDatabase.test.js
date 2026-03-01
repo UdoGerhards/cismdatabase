@@ -1,7 +1,8 @@
-import { DB_STRING, DB_TEST_NAME } from "/config.js";
+import { DB_CONNECTION, DB_NAME } from "/config.js";
 import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadWrite from "/lib/database/dao/MongoCollectionReadWrite.js";
 import { MongoClient, ObjectId } from "mongodb";
+import TestInfo from "../lib/database/model/TestInfo.js";
 
 describe("MongoDatabase", () => {
   let client;
@@ -14,18 +15,18 @@ describe("MongoDatabase", () => {
   // Validator wie im Server
   const testMetaValidator = (info) => {
     if (typeof info.name !== "string") throw new Error("Invalid name");
-    if (typeof info.createdAT !== "object" || info.createdAT === null)
-      throw new Error("Invalid createdAT");
+    if (typeof info._createdAt !== "object" || info._createdAt === null)
+      throw new Error("Invalid createdAt");
     if (typeof info.correct !== "number") throw new Error("Invalid correct");
     if (typeof info.wrong !== "number") throw new Error("Invalid wrong");
     return true;
   };
 
   beforeAll(async () => {
-    client = new MongoClient(DB_STRING);
+    client = new MongoClient(DB_CONNECTION);
     await client.connect();
 
-    database = client.db(DB_TEST_NAME);
+    database = client.db(DB_NAME);
     testCollection = database.collection("test");
 
     // Klasse direkt instanziieren — KEIN db aus server.js
@@ -38,14 +39,14 @@ describe("MongoDatabase", () => {
       {
         _id: new ObjectId(),
         name: "Test A",
-        createdAT: new Date(),
+        _createdAt: new Date(),
         correct: 0,
         wrong: 0,
       },
       {
         _id: new ObjectId(),
         name: "Test B",
-        createdAT: new Date(),
+        _createdAt: new Date(),
         correct: 1,
         wrong: 1,
       },
@@ -69,21 +70,17 @@ describe("MongoDatabase", () => {
 
   describe("DB_create", () => {
     test("create() inserts a document and returns mapped result", async () => {
-      const doc = {
-        _id: new ObjectId(),
-        name: "NewDoc",
-        createdAT: new Date(),
-        correct: 0,
-        wrong: 0,
-      };
+
+      const doc = new TestInfo();
+      doc.setName("NewDoc");
 
       const result = await col.create(doc);
 
-      expect(result).toHaveProperty("id");
+      expect(result).toHaveProperty("_id");
       expect(result.name).toBe("NewDoc");
 
       // Cleanup
-      await testCollection.deleteOne({ _id: new ObjectId(result.id) });
+      await testCollection.deleteOne({ _id: result._id});
     });
   });
 
@@ -108,7 +105,7 @@ describe("MongoDatabase", () => {
   describe("DB_readAll", () => {
     test("readAll() returns all documents", async () => {
       const result = await col.readAll({});
-     // expect(result.length).toBe(2);
+      // expect(result.length).toBe(2);
     });
   });
 
@@ -116,18 +113,17 @@ describe("MongoDatabase", () => {
     test("update() modifies a document", async () => {
       const id = insertedTestIds[0].toString();
 
-      const update = {
-        name: "Updated",
-        createdAT: new Date(),
-        correct: 5,
-        wrong: 1,
-      };
+      const update = new TestInfo();
+      update._createdAt = new Date();
+      update.setName("Updated Doc");
+      update.setCorrect(5);
+      update.setWrong(1);
 
       const success = await col.update(id, update);
       expect(success).toBe(true);
 
       const updatedDoc = await col.read(id);
-      expect(updatedDoc.name).toBe("Updated");
+      expect(updatedDoc.name).toBe("Updated Doc");
     });
   });
 

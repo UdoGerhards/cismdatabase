@@ -57,56 +57,103 @@
             "pattern": "-yyyy-MM-dd",
             "category": "defaultFile",
             "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/Server.log"
+        },
+        "MockExecutor": {
+            "type": "file",
+            "pattern": "-yyyy-MM-dd",
+            "category": "defaultFile",
+            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/MockExecutor.log"
+        },
+        "MockQuestion": {
+            "type": "file",
+            "pattern": "-yyyy-MM-dd",
+            "category": "defaultFile",
+            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/MockQuestion.log"
+        },
+        "MockTest": {
+            "type": "file",
+            "pattern": "-yyyy-MM-dd",
+            "category": "defaultFile",
+            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/MockTest.log"
         }
     },
     "categories": {
         "MongoDatabase": {
             "appenders": [
-                "MongoDatabase"
+                "MongoDatabase",
+                "default"
             ],
             "level": "INFO"
         },
         "QuestionDAO": {
             "appenders": [
-                "QuestionDAO"
+                "QuestionDAO",
+                "default"
             ],
             "level": "INFO"
         },
         "AnswerDAO": {
             "appenders": [
-                "AnswerDAO"
+                "AnswerDAO",
+                "default"
             ],
             "level": "INFO"
         },
         "TestDAO": {
             "appenders": [
-                "TestDAO"
+                "TestDAO",
+                "default"
             ],
             "level": "INFO"
         },
         "TestAnswersDAO": {
             "appenders": [
-                "TestAnswersDAO"
+                "TestAnswersDAO",
+                "default"
             ],
             "level": "INFO"
         },
         "UserDAO": {
             "appenders": [
-                "UserDAO"
+                "UserDAO",
+                "default"
             ],
             "level": "INFO"
         },
         "LogManager": {
             "appenders": [
-                "LogManager"
+                "LogManager",
+                "default"
             ],
             "level": "INFO"
         },
         "Server": {
             "appenders": [
-                "Server"
+                "Server",
+                "default"
             ],
             "level": "INFO"
+        },
+        "MockExecutor": {
+            "appenders": [
+                "MockExecutor",
+                "default"
+            ],
+            "level": "INFO"
+        },
+        "MockQuestion": {
+            "appenders": [
+                "MockQuestion",
+                "default"
+            ],
+            "level": "DEBUG"
+        },
+        "MockTest": {
+            "appenders": [
+                "MockTest",
+                "default"
+            ],
+            "level": "DEBUG"
         },
         "default": {
             "appenders": [

@@ -15,9 +15,15 @@
     "@server": "./lib/server"
   },
   "type": "module",
+  "imports": {
+    "#config":"./config.js",
+    "#logConfig": "./configuration/log4js.json"
+  },
   "scripts": {
     "start": "node server.js",
-    "test": "jest"
+    "test": "jest",
+    "premock": "node MockBuilder.js",
+    "mock": "node server.js"
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",

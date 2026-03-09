@@ -35,7 +35,7 @@ describe("MongoDatabase_real", () => {
 
     database = client.db(DB_NAME);
 
-    await MongoDatabase.init(DB_CONNECTION, DB_NAME, LogManager);
+    await MongoDatabase.init(LogManager);
     //await MongoDatabase.connect();
 
     questionCol = database.collection("question");
@@ -287,7 +287,7 @@ describe("MongoDatabase_real", () => {
   });
 
   describe("Question_full", () => {
-    test("Reads a full question object from database via MongoDatabase", async () => {
+    test.only("Reads a full question object from database via MongoDatabase", async () => {
       await createFullQuestion();
 
       try {
@@ -305,6 +305,11 @@ describe("MongoDatabase_real", () => {
         );
         expect(result._id).toBeInstanceOf(Object);
         expect(result.answers.length).toBe(4);
+      } catch(err) {
+
+        console.log(err);
+        throw err;
+        
       } finally {
         await cleanFullQuestion();
       }

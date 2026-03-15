@@ -1,3 +1,4 @@
+import "./env.js"
 import { DB_CONNECTION, DB_NAME } from "#config";
 import Server from "./lib/server/routes.js"
 

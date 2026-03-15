@@ -101,7 +101,7 @@
     },
     "UserDAO": {
       "appenders": ["UserDAO", "default"],
-      "level": "DEBUG"
+      "level": "INFO"
     },
     "LogManager": {
       "appenders": ["LogManager", "default"],

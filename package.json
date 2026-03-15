@@ -16,7 +16,7 @@
   },
   "type": "module",
   "imports": {
-    "#config":"./config.js",
+    "#config": "./config.js",
     "#logConfig": "./configuration/log4js.json"
   },
   "scripts": {
@@ -28,7 +28,12 @@
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "Annotation-framework": "github:UdoGerhards/NodeJS-Annotations-Base",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
     "log4js": "^6.9.1",
     "log4js-extend": "^0.2.1",
     "mongodb": "^7.1.0"

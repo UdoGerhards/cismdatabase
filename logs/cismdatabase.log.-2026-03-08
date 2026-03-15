@@ -1,2 +1,0 @@
-[2026-03-09T06:34:26.476] [INFO] default - Returning logger for category 'LogManager' ...  getLogger(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/logging/LogManager.js:54:12)
-[2026-03-09T06:34:27.205] [INFO] MongoCollectionReadWrite - Logger initialized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)

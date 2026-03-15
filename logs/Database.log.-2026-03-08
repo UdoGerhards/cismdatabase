@@ -1,2 +1,0 @@
-[2026-03-09T06:34:28.772] [INFO] MongoDatabase - Logger initialized init(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/foundation/Base.js:15:21)
-[2026-03-09T06:34:29.172] [INFO] MongoDatabase - spec_getQuestionFull: Getting the full question object for question with ID: 69ae5be5bfe5fa2e1b548041 spec_getQuestionFull(/media/udo/Exchange/Dokumente/Development/Node/cismdatabase/lib/database/MongoDatabase.js:322:21)

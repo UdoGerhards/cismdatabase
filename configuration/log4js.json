@@ -1,165 +1,131 @@
 {
-    "appenders": {
-        "default": {
-            "type": "stdout",
-            "pattern": "-yyyy-MM-dd"
-        },
-        "defaultFile": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/cismdatabase.log"
-        },
-        "MongoDatabase": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/Database.log"
-        },
-        "QuestionDAO": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/QuestionDAO.log"
-        },
-        "AnswerDAO": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/AnswerDAO.log"
-        },
-        "TestDAO": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/TestDAO.log"
-        },
-        "TestAnswersDAO": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/TestAnswersDAO.log"
-        },
-        "UserDAO": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/UserDAO.log"
-        },
-        "LogManager": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/Server.log"
-        },
-        "Server": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/Server.log"
-        },
-        "MockExecutor": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/MockExecutor.log"
-        },
-        "MockQuestion": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/MockQuestion.log"
-        },
-        "MockTest": {
-            "type": "file",
-            "pattern": "-yyyy-MM-dd",
-            "category": "defaultFile",
-            "filename": "/home/udo/Dokumente/Development/Node/cismdatabase/logs/MockTest.log"
-        }
+  "appenders": {
+    "default": {
+      "type": "stdout",
+      "pattern": "-yyyy-MM-dd"
     },
-    "categories": {
-        "MongoDatabase": {
-            "appenders": [
-                "MongoDatabase",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "QuestionDAO": {
-            "appenders": [
-                "QuestionDAO",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "AnswerDAO": {
-            "appenders": [
-                "AnswerDAO",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "TestDAO": {
-            "appenders": [
-                "TestDAO",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "TestAnswersDAO": {
-            "appenders": [
-                "TestAnswersDAO",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "UserDAO": {
-            "appenders": [
-                "UserDAO",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "LogManager": {
-            "appenders": [
-                "LogManager",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "Server": {
-            "appenders": [
-                "Server",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "MockExecutor": {
-            "appenders": [
-                "MockExecutor",
-                "default"
-            ],
-            "level": "INFO"
-        },
-        "MockQuestion": {
-            "appenders": [
-                "MockQuestion",
-                "default"
-            ],
-            "level": "DEBUG"
-        },
-        "MockTest": {
-            "appenders": [
-                "MockTest",
-                "default"
-            ],
-            "level": "DEBUG"
-        },
-        "default": {
-            "appenders": [
-                "defaultFile"
-            ],
-            "level": "INFO"
-        }
+
+    "defaultFile": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/cismdatabase.log"
+    },
+
+    "MongoDatabase": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/Database.log"
+    },
+
+    "QuestionDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/QuestionDAO.log"
+    },
+
+    "AnswerDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/AnswerDAO.log"
+    },
+
+    "TestDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/TestDAO.log"
+    },
+
+    "TestAnswersDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/TestAnswersDAO.log"
+    },
+
+    "UserDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/UserDAO.log"
+    },
+
+    "LogManager": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/Server.log"
+    },
+
+    "Server": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/Server.log"
+    },
+
+    "MockExecutor": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/MockExecutor.log"
+    },
+
+    "MockQuestion": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/MockQuestion.log"
+    },
+
+    "MockTest": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/MockTest.log"
     }
+  },
+
+  "categories": {
+    "MongoDatabase": {
+      "appenders": ["MongoDatabase", "default"],
+      "level": "INFO"
+    },
+    "QuestionDAO": {
+      "appenders": ["QuestionDAO", "default"],
+      "level": "INFO"
+    },
+    "AnswerDAO": {
+      "appenders": ["AnswerDAO", "default"],
+      "level": "INFO"
+    },
+    "TestDAO": {
+      "appenders": ["TestDAO", "default"],
+      "level": "INFO"
+    },
+    "TestAnswersDAO": {
+      "appenders": ["TestAnswersDAO", "default"],
+      "level": "INFO"
+    },
+    "UserDAO": {
+      "appenders": ["UserDAO", "default"],
+      "level": "DEBUG"
+    },
+    "LogManager": {
+      "appenders": ["LogManager", "default"],
+      "level": "INFO"
+    },
+    "Server": {
+      "appenders": ["Server", "default"],
+      "level": "DEBUG"
+    },
+    "MockExecutor": {
+      "appenders": ["MockExecutor", "default"],
+      "level": "INFO"
+    },
+    "MockQuestion": {
+      "appenders": ["MockQuestion", "default"],
+      "level": "INFO"
+    },
+    "MockTest": {
+      "appenders": ["MockTest", "default"],
+      "level": "INFO"
+    },
+    "default": {
+      "appenders": ["defaultFile"],
+      "level": "INFO"
+    }
+  }
 }

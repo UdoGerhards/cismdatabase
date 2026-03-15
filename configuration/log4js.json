@@ -109,7 +109,7 @@
     },
     "Server": {
       "appenders": ["Server", "default"],
-      "level": "DEBUG"
+      "level": "INFO"
     },
     "MockExecutor": {
       "appenders": ["MockExecutor", "default"],

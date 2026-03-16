@@ -81,7 +81,7 @@
   "categories": {
     "MongoDatabase": {
       "appenders": ["MongoDatabase", "default"],
-      "level": "INFO"
+      "level": "Debug"
     },
     "QuestionDAO": {
       "appenders": ["QuestionDAO", "default"],
@@ -93,7 +93,7 @@
     },
     "TestDAO": {
       "appenders": ["TestDAO", "default"],
-      "level": "INFO"
+      "level": "Info"
     },
     "TestAnswersDAO": {
       "appenders": ["TestAnswersDAO", "default"],

@@ -81,7 +81,7 @@
   "categories": {
     "MongoDatabase": {
       "appenders": ["MongoDatabase", "default"],
-      "level": "Debug"
+      "level": "INFO"
     },
     "QuestionDAO": {
       "appenders": ["QuestionDAO", "default"],

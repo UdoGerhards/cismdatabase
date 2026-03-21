@@ -1,6 +1,7 @@
 module.exports = {
   testEnvironment: "node",
   transform: {},
+  setupFiles: ["dotenv/config"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
     "^@config/(.*)$": "<rootDir>/config/$1",

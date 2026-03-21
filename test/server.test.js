@@ -1,3 +1,5 @@
+process.env.JWT_SECRET = "testsecret";
+
 import { DB_CONNECTION, DB_NAME } from "../config.js";
 import Server from "../lib/server/routes.js";
 import { MongoClient, ObjectId } from "mongodb";

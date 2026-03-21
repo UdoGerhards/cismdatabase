@@ -81,51 +81,63 @@
   "categories": {
     "MongoDatabase": {
       "appenders": ["MongoDatabase", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "QuestionDAO": {
       "appenders": ["QuestionDAO", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "AnswerDAO": {
       "appenders": ["AnswerDAO", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "TestDAO": {
       "appenders": ["TestDAO", "default"],
-      "level": "Info"
+      "level": "Info",
+      "enableCallStack": false
     },
     "TestAnswersDAO": {
       "appenders": ["TestAnswersDAO", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "UserDAO": {
       "appenders": ["UserDAO", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "LogManager": {
       "appenders": ["LogManager", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "Server": {
       "appenders": ["Server", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "MockExecutor": {
       "appenders": ["MockExecutor", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "MockQuestion": {
       "appenders": ["MockQuestion", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "MockTest": {
       "appenders": ["MockTest", "default"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     },
     "default": {
       "appenders": ["defaultFile"],
-      "level": "INFO"
+      "level": "INFO",
+      "enableCallStack": false
     }
   }
 }

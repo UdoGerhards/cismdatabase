@@ -1,3 +1,5 @@
+process.env.JWT_SECRET = "testsecret";
+
 import { DB_CONNECTION, DB_NAME } from  "/config.js";
 import LogManager from "/lib/logging/LogManager.js";
 import MongoCollectionReadOnly from  "/lib/database/dao/MongoCollectionReadOnly.js";

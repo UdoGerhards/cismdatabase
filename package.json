@@ -29,15 +29,21 @@
     "@faker-js/faker": "^7.6.0",
     "@google/generative-ai": "^0.24.1",
     "Annotation-framework": "github:UdoGerhards/NodeJS-Annotations-Base",
+    "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
     "crypto": "^1.0.1",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
     "jsonwebtoken": "^9.0.3",
     "log4js": "^6.9.1",
     "log4js-extend": "^0.2.1",
-    "mongodb": "^7.1.0"
+    "mongodb": "^7.1.0",
+    "qrcode": "^1.5.4",
+    "speakeasy": "^2.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

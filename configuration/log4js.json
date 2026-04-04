@@ -75,7 +75,7 @@
         "MongoDatabase",
         "default"
       ],
-      "level": "DEBUG",
+      "level": "INFO",
       "enableCallStack": false
     },
     "QuestionDAO": {

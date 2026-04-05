@@ -39,6 +39,21 @@
       "pattern": "-yyyy-MM-dd",
       "filename": "/var/log/cismserver/UserDAO.log"
     },
+    "CacheDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/CacheDAO.log"
+    },
+    "CISMResultsDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/CISMResultsDAO.log"
+    },
+    "GeminiErrorDAO": {
+      "type": "file",
+      "pattern": "-yyyy-MM-dd",
+      "filename": "/var/log/cismserver/GeminiErrorDAO .log"
+    },
     "LogManager": {
       "type": "file",
       "pattern": "-yyyy-MM-dd",
@@ -99,7 +114,7 @@
         "TestDAO",
         "default"
       ],
-      "level": "Info",
+      "level": "INFO",
       "enableCallStack": false
     },
     "TestAnswersDAO": {
@@ -113,6 +128,30 @@
     "UserDAO": {
       "appenders": [
         "UserDAO",
+        "default"
+      ],
+      "level": "INFO",
+      "enableCallStack": false
+    },
+    "CacheDAO": {
+      "appenders": [
+        "CacheDAO",
+        "default"
+      ],
+      "level": "INFO",
+      "enableCallStack": false
+    },
+    "CISMResultsDAO": {
+      "appenders": [
+        "CISMResultsDAO",
+        "default"
+      ],
+      "level": "INFO",
+      "enableCallStack": false
+    },
+    "GeminiErrorDAO": {
+      "appenders": [
+        "GeminiErrorDAO",
         "default"
       ],
       "level": "INFO",

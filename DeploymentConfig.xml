@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <projectName>CismTrainer-Backend</projectName>
+    <webroot>/var/www/cismdatabase</webroot>
+    <server>smallbox</server>
+    <deployUser>deployuser</deployUser>
+    <deployPass>2Stacy-6Orate-brood-national6-tory1-Stahl</deployPass>
+    <appMode>nodejs</appMode> 
+    <localBackupsKeep>5</localBackupsKeep>
+    <remoteBackupsKeep>5</remoteBackupsKeep>
+    <excludes>.git,test,*.log,*/*.log,**/*.log,tests.json,.vscode,.gitignore</excludes>
+    <restartNginx>true</restartNginx>
+</config>

@@ -28,7 +28,6 @@
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
     "@google/generative-ai": "^0.24.1",
-    "Annotation-framework": "github:UdoGerhards/NodeJS-Annotations-Base",
     "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",

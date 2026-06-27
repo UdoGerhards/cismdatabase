@@ -90,7 +90,7 @@
         "MongoDatabase",
         "default"
       ],
-      "level": "DEBUG",
+      "level": "INFO",
       "enableCallStack": false
     },
     "QuestionDAO": {
@@ -98,7 +98,7 @@
         "QuestionDAO",
         "default"
       ],
-      "level": "DEBUG",
+      "level": "INFO",
       "enableCallStack": false
     },
     "AnswerDAO": {
@@ -170,7 +170,7 @@
         "Server",
         "default"
       ],
-      "level": "DEBUG",
+      "level": "INFO",
       "enableCallStack": false
     },
     "MockExecutor": {
